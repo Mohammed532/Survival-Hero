@@ -2,6 +2,7 @@ package survival_hero.entity.creatures;
 
 import java.awt.Graphics;
 
+import survival_hero.engine.entity.creatures.Creatures;
 import survival_hero.generic.Handler;
 import survival_hero.res.gfx.Assets;
 

@@ -2,6 +2,7 @@ package survival_hero.entity.statics;
 
 import java.awt.Graphics;
 
+import survival_hero.engine.entity.statics.StaticEntity;
 import survival_hero.generic.Handler;
 import survival_hero.res.gfx.Assets;
 

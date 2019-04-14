@@ -1,6 +1,6 @@
-package survival_hero.entity.statics;
+package survival_hero.engine.entity.statics;
 
-import survival_hero.entity.Entity;
+import survival_hero.engine.entity.Entity;
 import survival_hero.generic.Handler;
 
 public abstract class StaticEntity extends Entity{

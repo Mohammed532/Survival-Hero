@@ -5,14 +5,15 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
-import survival_hero.generic.Display;
+import survival_hero.engine.display.Display;
+import survival_hero.engine.res.gfx.ImageLoader;
+import survival_hero.engine.res.gfx.Spritesheet;
 import survival_hero.generic.Handler;
-import survival_hero.input.KeyManager;
-import survival_hero.input.MouseManager;
+import survival_hero.engine.user_input.KeyManager;
+import survival_hero.engine.user_input.MouseManager;
 import survival_hero.res.gfx.Assets;
 import survival_hero.res.gfx.GameCam;
-import survival_hero.res.gfx.ImageLoader;
-import survival_hero.res.gfx.Spritesheet;
+import survival_hero.states.DevState;
 import survival_hero.states.GameState;
 import survival_hero.states.MainMenu;
 import survival_hero.states.SettingsMenu;
@@ -39,6 +40,7 @@ public class Game implements Runnable{
 	private int fpsCounter;
 	
 	///////////States/////////////
+	public State devState;
 	public State gameState;
 	public State mainMenu;
 	public State setting;
@@ -69,6 +71,7 @@ public class Game implements Runnable{
 		
 		gameState = new GameState(handler);
 		mainMenu = new MainMenu(handler);
+		devState = new DevState(handler);
 		setting = new SettingsMenu(handler);
 		State.setState(mainMenu);
 		
@@ -91,7 +94,7 @@ public class Game implements Runnable{
 		}
 		
 		if(keyManager.enter) {
-			State.setState(gameState);
+			State.setState(devState);
 		}else if(keyManager.space) {
 			State.setState(setting);
 			if(keyManager.numb1) {

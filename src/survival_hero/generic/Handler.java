@@ -1,7 +1,7 @@
 package survival_hero.generic;
 
-import survival_hero.input.KeyManager;
-import survival_hero.input.MouseManager;
+import survival_hero.engine.user_input.KeyManager;
+import survival_hero.engine.user_input.MouseManager;
 import survival_hero.main.Game;
 import survival_hero.res.gfx.GameCam;
 import survival_hero.states.MainMenu;

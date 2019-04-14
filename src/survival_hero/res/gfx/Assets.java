@@ -5,6 +5,9 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
+import survival_hero.engine.res.gfx.ImageLoader;
+import survival_hero.engine.res.gfx.Spritesheet;
+
 
 public class Assets {
 	private static final int width = 32, height = 32;

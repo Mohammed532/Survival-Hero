@@ -5,9 +5,10 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import survival_hero.engine.entity.creatures.Creatures;
+import survival_hero.engine.res.gfx.Animation;
 import survival_hero.generic.Handler;
 import survival_hero.main.Game;
-import survival_hero.res.gfx.Animation;
 import survival_hero.res.gfx.Assets;
 
 public class Player extends Creatures{

@@ -1,4 +1,4 @@
-package survival_hero.generic;
+package survival_hero.engine.general;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

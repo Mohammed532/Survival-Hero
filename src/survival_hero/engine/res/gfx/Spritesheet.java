@@ -1,4 +1,4 @@
-package survival_hero.res.gfx;
+package survival_hero.engine.res.gfx;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;

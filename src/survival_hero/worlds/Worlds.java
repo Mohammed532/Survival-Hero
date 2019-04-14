@@ -3,11 +3,11 @@ package survival_hero.worlds;
 import java.awt.Graphics;
 import java.util.Random;
 
-import survival_hero.entity.EntityManager;
+import survival_hero.engine.entity.EntityManager;
+import survival_hero.engine.general.Utils;
 import survival_hero.entity.creatures.Player;
 import survival_hero.entity.statics.Tree;
 import survival_hero.generic.Handler;
-import survival_hero.generic.Utils;
 import survival_hero.main.Game;
 import survival_hero.res.gfx.tiles.Tile;
 
@@ -25,12 +25,12 @@ public class Worlds {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100, 100));
 		
-		int i = 1;
-		
-		while(i < 50) {
-			entityManager.addEntity(new Tree(handler, treeGen.nextInt(1000) + 200, treeGen.nextInt(600) + 200, 100, 130));
-			i++;
-		}
+//		int i = 1;
+//		
+//		while(i < 50) {
+//			entityManager.addEntity(new Tree(handler, treeGen.nextInt(1000) + 200, treeGen.nextInt(600) + 200, 100, 130));
+//			i++;
+//		}
 		
 		
 		loadWorld(path);

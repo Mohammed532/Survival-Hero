@@ -1,4 +1,4 @@
-package survival_hero.generic;
+package survival_hero.engine.display;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
