@@ -3,6 +3,10 @@ package survival_hero.worlds;
 import java.awt.Graphics;
 import java.util.Random;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+
 import survival_hero.engine.entity.EntityManager;
 import survival_hero.engine.general.Utils;
 import survival_hero.entity.creatures.Player;
@@ -33,16 +37,18 @@ public class Worlds {
 //		}
 		
 		
-		loadWorld(path);
+		loadWorldFromXML(path);
 		
 		entityManager.getPlayer().setX(xSpawn);
 		entityManager.getPlayer().setY(ySpawn);
 	}
 	
+	@Deprecated
 	private void loadWorld(String path) {
 		
 		String file = Utils.loadFileAsString(path);
 		String[] token = file.split("\\s+");
+		
 		
 		width = Utils.parseInt(token[0]);
 		height = Utils.parseInt(token[1]);
@@ -51,12 +57,48 @@ public class Worlds {
 		
 		tiles = new int[width][height];
 		
-		tiles = new int[width][height];
+//		for(int i = 0; i < token.length; i++) {
+//			System.out.print(token[i] + " ");
+//		}
+		
 		for(int y = 0; y < height; y++) {
 			for(int x = 0; x < width; x++) {
 				tiles[x][y] = Utils.parseInt(token[(x + y * width) + 4]);
 			}
 		}
+			
+	}
+
+	
+	private void loadWorldFromXML(String path) {
+		Document doc = Utils.readXMLFile(path);
+		
+		Node worldData = doc.getElementsByTagName("data").item(0);
+		if(worldData.getNodeType() == Node.ELEMENT_NODE) {	
+			Element eWorldData = (Element) worldData;
+			width = Utils.parseInt(
+					eWorldData.getElementsByTagName("width").item(0).getTextContent());
+			height = Utils.parseInt(
+					eWorldData.getElementsByTagName("height").item(0).getTextContent());
+			xSpawn = Utils.parseInt(
+					eWorldData.getElementsByTagName("xSpawn").item(0).getTextContent());
+			ySpawn = Utils.parseInt(
+					eWorldData.getElementsByTagName("ySpawn").item(0).getTextContent());
+			
+		}
+		
+		Node worldMap = doc.getElementsByTagName("map").item(0);
+		String worldMapString = worldMap.getTextContent();
+		worldMapString = worldMapString.replaceAll("\\s+", "");
+		
+		tiles = new int[width][height];
+		
+		for(int y = 0; y < height; y++) {
+			for(int x = 0; x < width; x++) {
+				tiles[x][y] = Utils.parseInt(worldMapString.charAt(x + y * width));
+			}
+		}
+		
 		
 	}
 	

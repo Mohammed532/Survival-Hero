@@ -11,7 +11,7 @@ public class DevState extends State {
 
 	public DevState(Handler handler) {
 		super(handler);
-		devWorld = new Worlds(handler, "res/worlds/dev_world1.txt");
+		devWorld = new Worlds(handler, "res/worlds/dev_world.xml");
 		handler.setWorld(devWorld);
 	}
 

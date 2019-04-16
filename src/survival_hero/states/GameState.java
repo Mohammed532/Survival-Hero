@@ -23,7 +23,7 @@ public class GameState extends State{
 		
 	public GameState(Handler handler) {
 		super(handler);
-		mainWorld = new Worlds(handler, "res/worlds/world1.txt");
+		mainWorld = new Worlds(handler, "res/worlds/world1.xml");
 		handler.setWorld(mainWorld);
 		//player2 = new Player(handler, width/2, (height/2)-32, 50);
 

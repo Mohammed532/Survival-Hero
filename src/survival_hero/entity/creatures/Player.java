@@ -88,9 +88,9 @@ public class Player extends Creatures{
 		
 		
 	
-		//g.setColor(Color.CYAN);
-		//g.fillRect((int)(x + bounds.x - handler.getGameCam().getxOffset()),
-			//		(int)(y + bounds.y - handler.getGameCam().getyOffset()), bounds.width, bounds.height);
+		g.setColor(Color.CYAN);
+		g.fillRect((int)(x + bounds.x - handler.getGameCam().getxOffset()),
+					(int)(y + bounds.y - handler.getGameCam().getyOffset()), bounds.width, bounds.height);
 		
 		/////////////////////////////////////
 		
