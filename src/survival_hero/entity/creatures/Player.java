@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import survival_hero.engine.entity.creatures.Creatures;
+import survival_hero.engine.entity_manager.creatures.Creatures;
 import survival_hero.engine.res.gfx.Animation;
 import survival_hero.generic.Handler;
 import survival_hero.main.Game;
@@ -88,10 +88,10 @@ public class Player extends Creatures{
 		
 		
 	
-		g.setColor(Color.CYAN);
-		g.fillRect((int)(x + bounds.x - handler.getGameCam().getxOffset()),
-					(int)(y + bounds.y - handler.getGameCam().getyOffset()), bounds.width, bounds.height);
-		
+//		g.setColor(Color.CYAN);
+//		g.fillRect((int)(x + bounds.x - handler.getGameCam().getxOffset()),
+//					(int)(y + bounds.y - handler.getGameCam().getyOffset()), bounds.width, bounds.height);
+
 		/////////////////////////////////////
 		
 	}

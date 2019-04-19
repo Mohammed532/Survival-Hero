@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
-import survival_hero.engine.display.Display;
+import survival_hero.engine.display_manager.Display;
 import survival_hero.engine.res.gfx.ImageLoader;
 import survival_hero.engine.res.gfx.Spritesheet;
 import survival_hero.generic.Handler;
@@ -69,9 +69,8 @@ public class Game implements Runnable{
 		handler = new Handler(this);
 		gameCam = new GameCam(handler, 0, 0);
 		
-		gameState = new GameState(handler);
+		
 		mainMenu = new MainMenu(handler);
-		devState = new DevState(handler);
 		setting = new SettingsMenu(handler);
 		State.setState(mainMenu);
 		
@@ -89,11 +88,13 @@ public class Game implements Runnable{
 //		}
 		
 		if(MainMenu.play) { 
+			gameState = new GameState(handler);
 			State.setState(gameState);
 			MainMenu.play = false;
 		}
 		
 		if(keyManager.enter) {
+			devState = new DevState(handler);
 			State.setState(devState);
 		}else if(keyManager.space) {
 			State.setState(setting);
@@ -171,21 +172,6 @@ public class Game implements Runnable{
 		
 	}
 	
-	public KeyManager getKeyManager() {
-		return keyManager;
-	}
-	
-	public MouseManager getMouseManager() {
-		return mouseManager;
-	}
-	
-	public GameCam getGameCam() {
-		return gameCam;
-	}
-	
-	public int getFps() {
-		return fpsCounter;
-	}
 	
 	public synchronized void start() {
 		if(running) {
@@ -209,6 +195,26 @@ public class Game implements Runnable{
 			e.printStackTrace();
 		}
 	
+	}
+	
+	private void debug() {
+		
+	}
+	
+	public KeyManager getKeyManager() {
+		return keyManager;
+	}
+	
+	public MouseManager getMouseManager() {
+		return mouseManager;
+	}
+	
+	public GameCam getGameCam() {
+		return gameCam;
+	}
+	
+	public int getFps() {
+		return fpsCounter;
 	}
 
 }

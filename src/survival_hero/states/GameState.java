@@ -10,6 +10,7 @@ import survival_hero.generic.Handler;
 import survival_hero.main.Game;
 import survival_hero.res.gfx.Assets;
 import survival_hero.res.gfx.tiles.Tile;
+import survival_hero.worlds.OverWorld;
 import survival_hero.worlds.Worlds;
 
 public class GameState extends State{
@@ -18,12 +19,12 @@ public class GameState extends State{
 
 	int width = Game.width;
 	int height = Game.height;
-	private Worlds mainWorld;
+	private OverWorld mainWorld;
 
 		
 	public GameState(Handler handler) {
 		super(handler);
-		mainWorld = new Worlds(handler, "res/worlds/world1.xml");
+		mainWorld = new OverWorld(handler, "res/worlds/world1.xml");
 		handler.setWorld(mainWorld);
 		//player2 = new Player(handler, width/2, (height/2)-32, 50);
 

@@ -1,6 +1,6 @@
-package survival_hero.engine.entity.creatures;
+package survival_hero.engine.entity_manager.creatures;
 
-import survival_hero.engine.entity.Entity;
+import survival_hero.engine.entity_manager.Entity;
 import survival_hero.generic.Handler;
 import survival_hero.main.Game;
 import survival_hero.res.gfx.tiles.Tile;

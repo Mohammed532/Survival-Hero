@@ -1,4 +1,4 @@
-package survival_hero.engine.entity;
+package survival_hero.engine.entity_manager;
 
 import java.awt.Graphics;
 import java.util.ArrayList;

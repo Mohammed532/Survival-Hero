@@ -1,4 +1,4 @@
-package survival_hero.engine.general;
+package survival_hero.engine.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -45,9 +45,12 @@ public class Utils {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		
 		return doc;
 		
 	}
+	
+	
 	
 	public static int parseInt(String number) {
 		try {

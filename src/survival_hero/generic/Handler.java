@@ -4,14 +4,18 @@ import survival_hero.engine.user_input.KeyManager;
 import survival_hero.engine.user_input.MouseManager;
 import survival_hero.main.Game;
 import survival_hero.res.gfx.GameCam;
+import survival_hero.res.gfx.tiles.Tile;
 import survival_hero.states.MainMenu;
+import survival_hero.worlds.OverWorld;
 import survival_hero.worlds.Worlds;
 
 public class Handler {
 	
 	private Game game;
 	private Worlds world;
+	private OverWorld overWorld;
 	private MainMenu mainMenu;
+	private Tile tile;
 	
 	public Handler(Game game) {
 		
@@ -57,6 +61,10 @@ public class Handler {
 
 	public void setWorld(Worlds world) {
 		this.world = world;
+	}
+	
+	public int tileAmt() {
+		return tile.tileAmt();
 	}
 	
 //	public boolean isPlayTrue() {
