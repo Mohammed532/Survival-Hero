@@ -84,9 +84,9 @@ public class DevWorld extends Worlds{
 			
 		}
 		
-		for(int i = 0; i < perlinNoise.length; i++) {
-			System.out.println(perlinNoise[i] * 6);
-		}
+//		for(int i = 0; i < perlinNoise.length; i++) {
+//			System.out.println(perlinNoise[i] * 6);
+//		}
 		
 		
 		

@@ -2,6 +2,7 @@ package survival_hero.generic;
 
 import survival_hero.engine.user_input.KeyManager;
 import survival_hero.engine.user_input.MouseManager;
+import survival_hero.engine.util.PerlinNoise;
 import survival_hero.main.Game;
 import survival_hero.res.gfx.GameCam;
 import survival_hero.res.gfx.tiles.Tile;

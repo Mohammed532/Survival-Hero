@@ -1,6 +1,7 @@
 package survival_hero.main;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -110,6 +111,8 @@ public class Game implements Runnable{
 			}
 		}else if(keyManager.esc) {
 			State.setState(mainMenu);
+		}else if(keyManager.t_key) {
+			State.setState(null);
 		}
 	}
 	
@@ -126,7 +129,12 @@ public class Game implements Runnable{
 		////////////////////////Canvas//////////////////////////
 		
 		if(State.getState() != null) {
+			System.out.println("1");
 			State.getState().render(g);
+			System.out.println("2");
+		}else {
+			g.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+			g.drawString("Loading", width / 2, height / 2);
 		}
 		
 		////////////////////////////////////////////////////////
